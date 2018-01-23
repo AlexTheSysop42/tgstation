@@ -200,6 +200,7 @@
 	var/recharging_rate = 60 //default 6 seconds between each dash
 	var/recharging_time = 0 //time until next dash
 	var/jumping = FALSE //are we mid-jump?
+	var/was_flying = FALSE //to prevent jumping unsetting flying when you have it from something else
 
 /obj/item/clothing/shoes/bhop/ui_action_click(mob/user, action)
 	if(!isliving(user))
@@ -214,6 +215,10 @@
 
 	var/atom/target = get_edge_target_turf(user, user.dir) //gets the user's direction
 	if (user.throw_at(target, jumpdistance, jumpspeed, spin = FALSE, diagonals_first = TRUE, callback = CALLBACK(src, .proc/hop_end, list(user))))
+		if (user.movement_type &= FLYING)
+			was_flying = TRUE
+		else
+			was_flying = FALSE
 		user.movement_type |= FLYING
 		jumping = TRUE
 		playsound(src, 'sound/effects/stealthoff.ogg', 50, 1, 1)
@@ -223,7 +228,8 @@
 
 /obj/item/clothing/shoes/bhop/proc/hop_end(mob/user)
 	jumping = FALSE
-	user.movement_type &= ~FLYING
+	if (!was_flying)
+		user.movement_type &= ~FLYING
 	recharging_time = world.time + recharging_rate
 
 /obj/item/clothing/shoes/singery
