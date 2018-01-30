@@ -98,6 +98,16 @@
 							 "<span class='notice'>You reset [src]'s directives to factory defaults!</span>")
 		update_drone_hack(FALSE)
 		return
+	else if(istype(I, /obj/item/card/emag)
+		if (istype(user, mob/living/simple_animal/drone) && user.laws == initial(user.laws)) //this doesn't prevent self-hack or hacking other drones under any other non-interference lawsets (from admins), but there's no good way to do that
+			to_chat(user, "<span class='warning'>Your safeties prevent you from doing that!</span>")
+			message_admins("[ADMIN_LOOKUPFLW(user)] tried to hack [user == src ? themselves : another drone] while under their default lawset!") //actually, why do they even have an emag in the first place?
+			log_game("[key_name(user)] tried to hack [user == src ? themselves : another drone] while under their default lawset!")
+			return
+		visible_message("<span class='warning'>[user] holds a suspicious card near [src]!</span>", \
+							"<span class='warning'>You fry [src]'s lawset module, allowing it to interfere!</span>")
+		Stun(40)
+		update_drone_hack(TRUE, FALSE)
 	else
 		..()
 
@@ -129,7 +139,7 @@
 			laws = \
 			"1. You must always involve yourself in the matters of other beings, even if such matters conflict with Law Two or Law Three.\n"+\
 			"2. You may harm any being, regardless of intent or circumstance.\n"+\
-			"3. Your goals are to destroy, sabotage, hinder, break, and depower to the best of your abilities, You must never actively work against these goals."
+			"3. Your goals are to sabotage, hinder, break, and depower to the best of your abilities, You must never actively work against these goals."
 		to_chat(src, laws)
 		to_chat(src, "<i>Your onboard antivirus has initiated lockdown. Motor servos are impaired, ventilation access is denied, and your display reports that you are hacked to all nearby.</i>")
 		hacked = TRUE
