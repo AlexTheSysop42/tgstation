@@ -29,6 +29,9 @@
 		for(var/obj/effect/O in A)
 			if(is_cleanable(O))
 				qdel(O)
+	if(reagents.has_reagent("lube"))
+		message_admins("[ADMIN_LOOKUPFLW(user)] mopped Space lube from \a [src] onto [area] [ADMIN_COORDJMP(T)].")
+		log_game("[key_name(user)] mopped Space lube from \a [src] onto [area] [COORD(T)].")
 	reagents.reaction(A, TOUCH, 10)	//Needed for proper floor wetting.
 	reagents.remove_any(1)			//reaction() doesn't use up the reagents
 
