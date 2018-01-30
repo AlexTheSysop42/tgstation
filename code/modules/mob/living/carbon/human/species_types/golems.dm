@@ -226,6 +226,7 @@
 	info_text = "As an <span class='danger'>Alloy Golem</span>, you are made of advanced alien materials: you are faster and regenerate over time. You are, however, only able to be heard by other alloy golems."
 	prefix = "Alien"
 	special_names = list("Outsider", "Technology", "Watcher", "Stranger") //ominous and unknown
+	var/random_eligible = FALSE //2op
 
 //Regenerates because self-repairing super-advanced alien tech
 /datum/species/golem/alloy/spec_life(mob/living/carbon/human/H)
@@ -551,6 +552,7 @@
 	info_text = "As a <span class='danger'>Runic Golem</span>, you possess eldritch powers granted by the Elder God Nar'Sie."
 	species_traits = list(SPECIES_INORGANIC,NOBREATH,RESISTHOT,RESISTCOLD,RESISTPRESSURE,NOFIRE,NOGUNS,NOBLOOD,RADIMMUNE,PIERCEIMMUNE,NODISMEMBER,NO_UNDERWEAR) //no mutcolors
 	prefix = "Runic"
+	var/random_eligible = FALSE //just get runed metal from lavaland
 
 	var/obj/effect/proc_holder/spell/targeted/ethereal_jaunt/shift/golem/phase_shift
 	var/obj/effect/proc_holder/spell/targeted/abyssal_gaze/abyssal_gaze
@@ -613,6 +615,7 @@
 	damage_overlay_type = "synth"
 	prefix = "Clockwork"
 	var/has_corpse
+	var/random_eligible = TRUE //it isnt as op as runed or alloy, change this if it becomes a problem
 
 /datum/species/golem/clockwork/on_species_gain(mob/living/carbon/human/H)
 	. = ..()
