@@ -145,6 +145,8 @@
 		hacked = TRUE
 		mind.special_role = "hacked drone"
 		seeStatic = 0 //I MUST SEE THEIR TERRIFIED FACES
+		C.remove_language(/datum/language_holder/drone) //having both might cause problems, this should be fast enough to not notice
+		C.grant_language(/datum/language_holder/drone/syndicate) //they're supposed to interfere
 		ventcrawler = VENTCRAWLER_NONE //Again, balance
 		speed = 1 //gotta go slow
 		message_admins("[src] ([src.key]) became a hacked drone hellbent on [clockwork ? "serving Ratvar" : "destroying the station"]!")
@@ -161,6 +163,8 @@
 		hacked = FALSE
 		mind.special_role = null
 		seeStatic = initial(seeStatic)
+		C.remove_language(/datum/language_holder/drone/syndicate)
+		C.grant_language(/datum/language_holder/drone)
 		ventcrawler = initial(ventcrawler)
 		speed = initial(speed)
 		if(is_servant_of_ratvar(src))
