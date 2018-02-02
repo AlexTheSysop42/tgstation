@@ -98,12 +98,12 @@
 							 "<span class='notice'>You reset [src]'s directives to factory defaults!</span>")
 		update_drone_hack(FALSE)
 		return
-	else if(istype(I, /obj/item/card/emag)
-		if (istype(user, mob/living/simple_animal/drone) && user.laws == initial(user.laws)) //this doesn't prevent self-hack or hacking other drones under any other non-interference lawsets (from admins), but there's no good way to do that
-			to_chat(user, "<span class='warning'>Your safeties prevent you from doing that!</span>")
-			message_admins("[ADMIN_LOOKUPFLW(user)] tried to hack [user == src ? themselves : another drone] while under their default lawset!") //actually, why do they even have an emag in the first place?
-			log_game("[key_name(user)] tried to hack [user == src ? themselves : another drone] while under their default lawset!")
-			return
+	else if(istype(I, /obj/item/card/emag))
+		if (istype(user, /mob/living/simple_animal/drone))
+			to_chat(user, "<span class='warning'>Despite your safeties, you emag [src] anyway</span>")
+			message_admins("[ADMIN_LOOKUPFLW(user)] tried to hack [user == src ? "themselves" : "another drone"] while under their default lawset!") //actually, why do they even have an emag in the first place?
+			log_game("[key_name(user)] tried to hack [user == src ? "themselves" : "another drone"] while under their default lawset!")
+
 		visible_message("<span class='warning'>[user] holds a suspicious card near [src]!</span>", \
 							"<span class='warning'>You fry [src]'s lawset module, allowing it to interfere!</span>")
 		Stun(40)
@@ -145,8 +145,8 @@
 		hacked = TRUE
 		mind.special_role = "hacked drone"
 		seeStatic = 0 //I MUST SEE THEIR TERRIFIED FACES
-		C.remove_language(/datum/language_holder/drone) //having both might cause problems, this should be fast enough to not notice
-		C.grant_language(/datum/language_holder/drone/syndicate) //they're supposed to interfere
+		src.remove_language(/datum/language_holder/drone) //having both might cause problems, this should be fast enough to not notice
+		src.grant_language(/datum/language_holder/drone/syndicate) //they're supposed to interfere
 		ventcrawler = VENTCRAWLER_NONE //Again, balance
 		speed = 1 //gotta go slow
 		message_admins("[src] ([src.key]) became a hacked drone hellbent on [clockwork ? "serving Ratvar" : "destroying the station"]!")
@@ -163,8 +163,8 @@
 		hacked = FALSE
 		mind.special_role = null
 		seeStatic = initial(seeStatic)
-		C.remove_language(/datum/language_holder/drone/syndicate)
-		C.grant_language(/datum/language_holder/drone)
+		src.remove_language(/datum/language_holder/drone/syndicate)
+		src.grant_language(/datum/language_holder/drone)
 		ventcrawler = initial(ventcrawler)
 		speed = initial(speed)
 		if(is_servant_of_ratvar(src))
