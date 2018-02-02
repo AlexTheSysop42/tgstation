@@ -262,3 +262,15 @@
 	name = "NT Medical Ship"
 	description = "An ancient ship, said to be among the first discovered derelicts near Space Station 13 that was still in working order. \
 	Aged and deprecated by time, this relic of a vessel is now broken beyond repair."
+
+/datum/map_template/ruin/space/whiteshipdock
+	id = "whiteshipdock"
+	suffix = "whiteshipdock.dmm"
+	name = "Whiteship Dock"
+	description = "An abandoned but functional vessel parked in deep space, ripe for the taking."
+
+/datum/map_template/ruin/space/scp_294
+	id = "scp_294"
+	suffix = "scp_294.dmm"
+	name = "SCP-294 Containment"
+	description = "An abandoned asteroid base that contains several EMP-proof turrets, and a valuable artifact. Should you get past the heavy laser turrets, a valuable treasure awaits."

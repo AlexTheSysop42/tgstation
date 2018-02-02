@@ -1,0 +1,41 @@
+"a" = (/turf/template_noop,/area/template_noop)
+"b" = (/turf/open/floor/plating/asteroid/airless,/area/ruin/space/has_grav/powered/scp_294)
+"c" = (/obj/structure/lattice,/turf/open/space/basic,/area/ruin/space/has_grav/powered/scp_294)
+"d" = (/obj/machinery/porta_turret/syndicate/energy/heavy{mode = 1},/turf/open/floor/plating/asteroid/airless,/area/ruin/space/has_grav/powered/scp_294)
+"e" = (/obj/effect/spawner/trap,/turf/open/floor/plating/asteroid/airless,/area/ruin/space/has_grav/powered/scp_294)
+"f" = (/turf/closed/wall,/area/ruin/space/has_grav/powered/scp_294)
+"g" = (/turf/closed/wall/rust,/area/ruin/space/has_grav/powered/scp_294)
+"h" = (/obj/effect/spawner/trap,/turf/open/floor/plating/airless,/area/ruin/space/has_grav/powered/scp_294)
+"i" = (/turf/open/floor/plating/airless,/area/ruin/space/has_grav/powered/scp_294)
+"j" = (/mob/living/simple_animal/hostile/mimic/crate{faction = list("mimic","syndicate")},/turf/open/floor/plating/airless,/area/ruin/space/has_grav/powered/scp_294)
+"k" = (/mob/living/simple_animal/hostile/asteroid/goliath{faction = list("mining","syndicate")},/turf/open/floor/plating/asteroid/airless,/area/ruin/space/has_grav/powered/scp_294)
+"l" = (/obj/item/wirerod,/turf/open/floor/plating/airless,/area/ruin/space/has_grav/powered/scp_294)
+"m" = (/turf/open/floor/plating/airless/astplate,/area/ruin/space/has_grav/powered/scp_294)
+"n" = (/turf/open/floor/plating,/area/ruin/space/has_grav/powered/scp_294)
+"o" = (/obj/machinery/light{dir = 4; flickering = 1; idle_power_usage = 0; use_power = 0},/turf/open/floor/plating/airless,/area/ruin/space/has_grav/powered/scp_294)
+"p" = (/obj/machinery/porta_turret/syndicate/energy/heavy{mode = 1},/turf/open/floor/plating,/area/ruin/space/has_grav/powered/scp_294)
+"r" = (/obj/structure/girder,/turf/open/floor/plating/asteroid/airless,/area/ruin/space/has_grav/powered/scp_294)
+"s" = (/obj/effect/decal/remains/robot,/turf/open/floor/plating/airless,/area/ruin/space/has_grav/powered/scp_294)
+"u" = (/obj/effect/gibspawner/humanbodypartless,/turf/open/floor/plating/airless,/area/ruin/space/has_grav/powered/scp_294)
+"v" = (/obj/machinery/light{flickering = 1; idle_power_usage = 0; use_power = 0},/obj/effect/spawner/trap,/turf/open/floor/plating/airless,/area/ruin/space/has_grav/powered/scp_294)
+"w" = (/obj/item/wrench,/turf/open/floor/plating/airless,/area/ruin/space/has_grav/powered/scp_294)
+"x" = (/obj/effect/decal/remains/human,/turf/open/floor/plating/airless,/area/ruin/space/has_grav/powered/scp_294)
+"y" = (/obj/structure/girder/reinforced,/turf/open/floor/plating/asteroid/airless,/area/ruin/space/has_grav/powered/scp_294)
+"z" = (/obj/machinery/porta_turret/syndicate/energy/heavy{mode = 1},/turf/closed/wall/rust,/area/ruin/space/has_grav/powered/scp_294)
+"A" = (/obj/machinery/chem_dispenser/scp_294,/turf/open/floor/plating,/area/ruin/space/has_grav/powered/scp_294)
+
+(1,1,1) = {"
+aaabbaaaaacbbdaaa
+aabebbbbbbbbbbaaa
+abbbfffffgfffbbaa
+adbbghijiiiifbkbb
+bbbbglmnnnhofbebb
+bkbbfihnAnmhrbbbb
+bbbbfspnnnihrbbec
+aabbfmiuihiifbbca
+aabbfhvwjiixfbbaa
+aabbyyfffgffzbcaa
+abebbbbbbbbbbbcca
+aabbcabbaccaabbaa
+aaaaaadaaacaaaaaa
+"}
