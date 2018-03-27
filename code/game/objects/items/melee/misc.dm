@@ -209,6 +209,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	slot_flags = null
 	w_class = WEIGHT_CLASS_BULKY
+	attack_verb = list("disintegrated", "vaporized", "metaphysically annihilated")
 	force = 0.001
 	armour_penetration = 1000
 	var/obj/machinery/power/supermatter_shard/shard
