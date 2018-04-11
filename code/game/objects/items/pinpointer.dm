@@ -149,3 +149,20 @@
 		return PROCESS_KILL
 	scan_for_target()
 	update_icon()
+
+/obj/item/pinpointer/pinpointer
+	name = "pinpointer pinpointer"
+	desc = "Points to a pinpointer."
+	var/typeofpinpointer = /obj/item/pinpointer/nuke
+
+/obj/item/pinpointer/pinpointer/Initialize()
+	var/list/viabletargets = new list()
+	for (/obj/item/pinpointer/P in GLOB.pinpointer_list)
+		if(istype(P, typeofpinpointer) && !istype(P, /obj/item/pinpointer/nuke/syndicate)) //so you can't meta ops
+			viabletargets += P
+	target = pick(viabletargets)
+
+/obj/item/pinpointer/pinpointer/pinpointer
+	name = "pinpointer pinpointer pinpointer"
+	desc = "This is getting ridiculous."
+	typeofpinpointer = /obj/item/pinpointer/pinpointer
