@@ -156,6 +156,7 @@
 	var/typeofpinpointer = /obj/item/pinpointer/nuke
 
 /obj/item/pinpointer/pinpointer/Initialize()
+	. = ..()
 	var/list/viabletargets = new list()
 	for (/obj/item/pinpointer/P in GLOB.pinpointer_list)
 		if(istype(P, typeofpinpointer) && !istype(P, /obj/item/pinpointer/nuke/syndicate)) //so you can't meta ops
